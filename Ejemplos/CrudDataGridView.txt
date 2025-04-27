@@ -1,0 +1,76 @@
+	
+// Boton agregar
+
+	   CLsistemaPlanilla ClassPlanilla = new CLsistemaPlanilla();
+
+		int ContadorFilas = dgvSistemaPlanilla.Rows.Add();
+
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[0].Value = cboxCodigo.Text;
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[1].Value = lblNombre.Text;
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[2].Value = cboxCargo.Text;
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[3].Value = cboxMes.Text;
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[4].Value = lblSalarioBase.Text;
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[5].Value = txtHorasExtras.Text;
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[6].Value = ClassPlanilla.MtdHorasExtras(int.Parse(txtHorasExtras.Text));
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[7].Value = ClassPlanilla.MtdIsr(double.Parse(lblSalarioBase.Text));
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[8].Value = ClassPlanilla.MtdIgss(double.Parse(lblSalarioBase.Text));
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[9].Value = ClassPlanilla.MtdSalarioNeto(double.Parse(lblSalarioBase.Text), ClassPlanilla.MtdHorasExtras(int.Parse(txtHorasExtras.Text)), ClassPlanilla.MtdIsr(double.Parse(lblSalarioBase.Text)), ClassPlanilla.MtdIgss(double.Parse(lblSalarioBase.Text)));
+			
+
+// Boton Editar
+	
+	// Configurar propiedad DataGridView
+		AutoSizeColumMod = ColumnHeader
+		SelectionMode	 = FullRowSelect
+		ReadOnly 		 = True
+			
+	// Configurar DataGridView evento CellClick
+	
+		int ContadorFilas;
+		ContadorFilas = dgvSistemaPlanilla.CurrentRow.Index;
+
+		cboxCodigo.Text = dgvSistemaPlanilla[0, ContadorFilas].Value.ToString();
+		cboxMes.Text = dgvSistemaPlanilla[3, ContadorFilas].Value.ToString();
+		cboxCargo.Text = dgvSistemaPlanilla[2, ContadorFilas].Value.ToString();
+		txtHorasExtras.Text = dgvSistemaPlanilla[5, ContadorFilas].Value.ToString();
+			
+	// Configurar boton
+	
+		int ContadorFilas;
+		ContadorFilas = dgvSistemaPlanilla.CurrentRow.Index;
+
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[0].Value = cboxCodigo.Text;
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[1].Value = lblNombre.Text;
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[2].Value = cboxCargo.Text;
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[3].Value = cboxMes.Text;
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[4].Value = lblSalarioBase.Text;
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[5].Value = txtHorasExtras.Text;
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[6].Value = ClassPlanilla.MtdHorasExtras(int.Parse(txtHorasExtras.Text));
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[7].Value = ClassPlanilla.MtdIsr(double.Parse(lblSalarioBase.Text));
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[8].Value = ClassPlanilla.MtdIgss(double.Parse(lblSalarioBase.Text));
+		dgvSistemaPlanilla.Rows[ContadorFilas].Cells[9].Value = ClassPlanilla.MtdSalarioNeto(double.Parse(lblSalarioBase.Text), ClassPlanilla.MtdHorasExtras(int.Parse(txtHorasExtras.Text)), ClassPlanilla.MtdIsr(double.Parse(lblSalarioBase.Text)), ClassPlanilla.MtdIgss(double.Parse(lblSalarioBase.Text)));
+
+
+// Boton Cancelar
+
+		cboxCodigo.Text = "";
+		lblNombre.Text = "";
+		cboxMes.Text = "";
+		cboxCargo.Text = "";
+		txtHorasExtras.Text = "";
+		lblSalarioBase.Text = "";
+			
+	
+// Boton Eliminar
+
+		int ContadorFilas;
+		ContadorFilas = dgvSistemaPlanilla.CurrentRow.Index;
+		dgvSistemaPlanilla.Rows.RemoveAt(ContadorFilas);
+					
+// Boton Salir
+
+		this.Close();
+		
+			
+
+			
