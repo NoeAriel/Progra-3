@@ -39,8 +39,8 @@ Insert into tbl_Empleados (Nombre, Cargo, Salario, FechaContratacion, Estado, Us
 values 
 ('Juan Pérez', 'Gerente', 60000.00, GETDATE(), 'Activo', 'admin', GETDATE()),
 ('María López', 'Enfermera', 80000.00, GETDATE(), 'Activo', 'admin', GETDATE()),
-('Carlos García', 'Doctor', 50000.00, GETDATE(), 'Activo', 'admin', GETDATE());
-
+('Carlos García', 'Doctor', 50000.00, GETDATE(), 'Activo', 'admin', GETDATE()),
+('Noe Castillo', 'Ingeniero', 55000.00, GETDATE(), 'Activo', 'admin',GETDATE());
 
 Select * from tbl_Usuarios;
 
@@ -48,6 +48,6 @@ Insert into tbl_Usuarios (CodigoEmpleado, NombreUsuario, Contrasenia, Rol, Estad
 VALUES 
 (1, 'juanp', '123', 'Gerente', 'Activo', 'admin', GETDATE()),
 (2, 'marial', 'guate333', 'Asistente', 'Activo', 'admin', GETDATE()),
-(3, 'carlosg', 'umg321', 'Doctor', 'Activo', 'admin', GETDATE());
-
+(3, 'carlosg', 'umg321', 'Doctor', 'Activo', 'admin', GETDATE()),
+(4, 'noe', '007', 'Ingeniero', 'Activo', 'admin', GETDATE());
 
