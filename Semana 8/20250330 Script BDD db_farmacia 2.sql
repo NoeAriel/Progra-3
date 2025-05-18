@@ -117,6 +117,18 @@
 	Delete tbl_clientes where CodigoCliente = 1;
 	Delete tbl_clientes where CodigoCliente = @CodigoCliente;
 
+	--- Tabla categorias
+
+	create table tbl_categorias
+	(
+	CodigoCategoria int primary key identity(1,1) not null,
+	Nombre varchar (100),
+	Description varchar(255),
+	Estado varchar(20),
+	FechaAuditoria datetime,
+	UsuarioAuditoria varchar(50)
+	);
+
 	---Tabla medicamentos
 	create table tbl_medicamentos
 	(
@@ -131,6 +143,9 @@
 	Estado varchar(20),
 	FechaAuditoria datetime,
 	UsuarioAuditoria varchar(50)
+	Foreign key (CodigoProveedor) references tbl_proveedores(CodigoProveedor),
+	Foreign key (CodigoCategoria) references tbl-categorias(CodigoCategoria)
+
 	);
 
 
