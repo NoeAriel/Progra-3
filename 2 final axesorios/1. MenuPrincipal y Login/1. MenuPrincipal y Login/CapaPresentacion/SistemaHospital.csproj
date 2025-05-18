@@ -74,6 +74,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="prueba.cs" />
     <Compile Include="Seguridad\UserConnectionToSql.cs" />
     <Compile Include="Seguridad\FrmLogin.cs">
       <SubType>Form</SubType>
